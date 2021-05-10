@@ -1,0 +1,2 @@
+<!--component/button-type/button-type.wxml-->
+<button hover-class='btn-hover' data-num="{{btnNum}}" class="btn-class but-type size-{{size}} {{!isDisabled ? 'btn-disabled' : ''}} {{ghost && 'ghost'}} {{clickBool ? 'click' : ''}}" bindtap='btnClick' disabled="{{!isDisabled}}"><text class="btn-text">{{titleOne?titleOne:''}}</text>{{titleTwo?titleTwo:btnTitle}}</button>

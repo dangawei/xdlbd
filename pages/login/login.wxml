@@ -1,0 +1,25 @@
+<!--pages/login/login.wxml-->
+<view class='content'>
+  <view class='title'>账号:</view>
+  <view class='user' style='{{user.length > 0 ? "border-color:#2BA5F3":""}}'>
+    <view class='line' ></view>
+    <image src='/img/login/icon_user@3x.png' class='userImg'></image>
+    <view class='userLine'></view>
+    <input class='user-input' placeholder='请输入账号' value='{{user}}' bindinput='writeMessage' data-type='user' adjust-position="true" bindblur='bindinputBlur' />
+    <icon type="clear" size="20" hidden="{{!user}}" data-type='user' catchtap='clearMessage'/>
+  </view>
+  <view class='title' style='margin-top:30rpx;'>密码:</view>
+  <view class='user' style='{{password.length > 0 ? "border-color:#2BA5F3":""}}'>
+    <image src='/img/login/icon_password@3x.png' class='userImg password-img'></image>
+    <view class='userLine'></view>
+    <input class='user-input' placeholder='请输入密码' value='{{password}}' data-type='password' bindinput='writeMessage' password="true" adjust-position="true"  />
+    <icon type="clear" size="20" hidden="{{!password}}" data-type='password' catchtap='clearMessage' />
+  </view>
+    <view class='btn-wrapper'>
+     <button-type is-disabled="{{user && password}}" btn-title="登录" bind:btnEvent="login" />
+    </view>
+  <view class='remin' wx:if="{{showErr}}">{{msg}}确认后请重输</view>
+  <view class="use-style">功能说明：本小程序仅限公司内部销售人员使用，提供点位管理，客户管理，订单管理等功能</view>
+</view>
+
+

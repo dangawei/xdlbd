@@ -1,0 +1,59 @@
+/* component/button-type/button-type.wxss */
+.but-type {
+  background:linear-gradient(267deg,rgba(85,235,255,1) 0%,rgba(28,145,242,1) 100%);
+box-shadow:0 5rpx 40rpx 0 rgba(0,155,223,0.2);
+border-radius:45rpx;
+  font-size:34rpx;
+font-family:PingFangSC-Medium;
+font-weight:500;
+color: #FFF;
+border: 0;
+box-sizing: border-box;
+}
+.but-type.ghost{
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid #1C91F2;
+  color: #1C91F2;
+
+}
+.but-type.size-mini{
+  box-shadow: none;
+  font-size: 21rpx;
+  /* padding:10rpx 8rpx;
+  line-height: 30rpx; */
+  color:rgba(51,51,51,1);
+  background: rgba(225,225,230,1);
+  border: 1px solid rgba(225,225,230,1);
+  /* opacity:0.4; */
+}
+.but-type.size-mini.click{
+  background: rgba(229,244,255,1);
+  box-shadow: none;
+  border: 1px solid #1C91F2;
+  color: #1C91F2;
+}
+.but-type.size-sm{
+  width:484rpx;
+  height:80rpx;
+}
+.but-type.size-md{
+  width: 516rpx;
+  height: 90rpx;
+}
+.but-type.size-lg{
+  width: 650rpx;
+  height: 90rpx;
+}
+
+.btn-hover{
+  opacity: 0.8;
+}
+.btn-disabled{
+  box-shadow:none;
+  color: white!important;
+  background: #ccc!important;
+}
+.btn-text{
+  color: #333333;
+}
