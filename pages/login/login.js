@@ -35,7 +35,7 @@ Page({
     if (!user || !password) {
       wx.showModal({
         title: '温馨提示',
-        content: '亲爱的运维人员，您可能忙晕了，账号密码不能为空哦 ~',
+        content: '账号密码不能为空',
       })
       return
     }
@@ -52,9 +52,6 @@ Page({
         app.admin_user_id = res.id
         app.nickname = res.nickname
         app.company_name = res.company_name
-        wx.navigateTo({
-          url: '../system/system'
-        })
         const base = Base64.encode(password)
         const accInfo = { user, passW: base }
         wx.setStorage({ key: 'acc_info', data: accInfo })
@@ -66,42 +63,7 @@ Page({
         wx.setStorage({ key: 'company_id', data: res.company_id })
         wx.setStorage({ key: 'departments_id', data: res.departments_id })
        
-        // common_index({}).then(res =>{
-        //   app.admin_user_id = res.userinfo.id
-        //   app.nickname = res.userinfo.nickname
-        //   app.company_name = res.userinfo.company_name
-
-        //   wx.setStorage({ key: 'admin_user_id', data: res.userinfo.id })
-        //   wx.setStorage({ key: 'nickname', data: res.userinfo.nickname })
-        //   wx.setStorage({ key: 'company_name', data: res.userinfo.company_name })
-
-        //   return res.userinfo.id
-        // }).then(uid =>{
-        //   roleright({uid}).then(res => {//获取权限
-        //     app.followModule = []
-        //     app.operationModule = []
-        //     for(let i = 0; i < res.length;i++){
-        //       if(i < 6){
-        //         app.followModule.push(res[i])
-        //         this.traverse(res[i],i)
-        //       }else{
-        //         app.operationModule.push(res[i])
-        //       }
-        //     }
-        //     wx.setStorage({ key: 'followModule', data: app.followModule })
-        //     wx.setStorage({ key: 'operationModule', data: app.operationModule })
-        //     wx.navigateTo({
-        //       url: '../index/index'
-        //     })
-
-        //   }).catch(res => {
-        //     this.isClick = true
-
-        //   })
-        // }).catch(res =>{
-        //   this.isClick = true
-
-        // })
+        
       } else if (result.code == '201') {
         wx.showModal({
           title: '提示',

@@ -19,7 +19,7 @@
      <button-type is-disabled="{{user && password}}" btn-title="登录" bind:btnEvent="login" />
     </view>
   <view class='remin' wx:if="{{showErr}}">{{msg}}确认后请重输</view>
-  <view class="use-style">功能说明：本小程序仅限公司内部销售人员使用，提供点位管理，客户管理，订单管理等功能</view>
+  <view class="use-style">功能说明：本小程序仅限公司内部销售人员使用，提供客户管理，订单管理等功能</view>
 </view>
 
 
